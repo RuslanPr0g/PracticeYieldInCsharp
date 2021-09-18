@@ -1,4 +1,5 @@
 ﻿using System;
+using PracticeYieldInCsharp.DataAccess;
 
 namespace PracticeYieldInCsharp
 {
@@ -6,7 +7,18 @@ namespace PracticeYieldInCsharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Start of the app");
+
+            IDataAccess dataAccess = new MockDataAccess();
+
+            var people = dataAccess.GetPeople();
+
+            foreach (var person in people)
+            {
+                Console.WriteLine($"Read: {person.FirstName} {person.LastName}");
+            }
+
+            Console.WriteLine("End of the app");
         }
     }
 }
