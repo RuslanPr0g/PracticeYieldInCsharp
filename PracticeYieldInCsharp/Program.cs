@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using PracticeYieldInCsharp.DataAccess;
 
 namespace PracticeYieldInCsharp
@@ -10,12 +11,13 @@ namespace PracticeYieldInCsharp
             Console.WriteLine("Start of the app");
 
             IDataAccess dataAccess = new YieldDataAccess();
+            IPrimeGenerator primeGenerator = new YieldDataAccess();
 
-            var people = dataAccess.GetPeople();
+            var numbers = primeGenerator.GetPrimeGaps().Take(10);
 
-            foreach (var person in people)
+            foreach (var n in numbers)
             {
-                Console.WriteLine($"Read: {person.FirstName} {person.LastName}");
+                Console.WriteLine($"{n}");
             }
 
             Console.WriteLine("End of the app");
