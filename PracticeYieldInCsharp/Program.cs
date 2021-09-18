@@ -13,12 +13,14 @@ namespace PracticeYieldInCsharp
             IDataAccess dataAccess = new YieldDataAccess();
             IPrimeGenerator primeGenerator = new YieldDataAccess();
 
-            var numbers = primeGenerator.GetPrimeGaps().Take(10);
+            var numbers = primeGenerator.GetPrimeGaps().Take(100000);
 
-            foreach (var n in numbers)
-            {
-                Console.WriteLine($"{n}");
-            }
+            Console.WriteLine($"{numbers.Max()}");
+
+            //foreach (var n in numbers)
+            //{
+            //    Console.WriteLine($"{n}");
+            //}
 
             Console.WriteLine("End of the app");
         }
