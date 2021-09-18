@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PracticeYieldInCsharp.DataAccess
 {
-    public class MockDataAccess : IDataAccess
+    public class SimpleDataAccess : IDataAccess
     {
         public IEnumerable<Person> GetPeople()
         {

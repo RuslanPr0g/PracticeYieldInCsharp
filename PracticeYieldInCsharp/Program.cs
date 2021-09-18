@@ -9,7 +9,7 @@ namespace PracticeYieldInCsharp
         {
             Console.WriteLine("Start of the app");
 
-            IDataAccess dataAccess = new MockDataAccess();
+            IDataAccess dataAccess = new YieldDataAccess();
 
             var people = dataAccess.GetPeople();
 
